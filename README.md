@@ -3,8 +3,8 @@
 **ติดตั้ง Expo
 
 1.ติดตั้ง Node.js
-2.เปิด command prompt\n
-3.ติดตั้ง Expo พิมคำสั่งตามนี้\n
+2.เปิด command prompt
+3.ติดตั้ง Expo พิมคำสั่งตามนี้
   npm install expo-cli --global
 4.สร้างไฟล์ project สำหรับ Expo
   expo init "ชื่อไฟล์"
