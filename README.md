@@ -30,3 +30,33 @@
 
 
 ศึกษาเพิ่มเติม https://expo.io/learn //ที่เขียนมาทั้งหมดเหมือนในเว็ปนั้นแหละ *-*
+
+
+(----ใหม่----)
+
+อัพ code ให้แล้วตัวฟังก์ชั่นต่างๆจะอยู่ใน App.js (side_memu,Bottom_tab) ส่วนหน้าแรก(หน้าMain) จะอยู่ใน Screen/HomeScreen.js
+
+
+ถ้าใคร Run ไม่ได้ให้ติดตั้งตัวเสริมตามนี้
+
+    "@react-native-community/masked-view": "^0.1.5",
+    "@react-navigation/bottom-tabs": "^5.1.0",
+    "@react-navigation/core": "^5.2.0",
+    "@react-navigation/drawer": "^5.1.0",
+    "@react-navigation/native": "^5.0.8",
+    "@react-navigation/stack": "^5.1.0",
+    "expo": "~36.0.0",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-elements": "^1.2.7",
+    "react-native-gesture-handler": "^1.5.6",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-safe-area-context": "^0.6.0",
+    "react-native-screens": "^2.0.0-alpha.12",
+    "react-native-web": "~0.11.7"
+
+วิธีก็ "npm install _______ตามชื่อมันเลย_______"
+
+
+เช่น " npm install @react-navigation/native "
