@@ -37,7 +37,7 @@
 อัพ code ให้แล้วตัวฟังก์ชั่นต่างๆจะอยู่ใน App.js (side_memu,Bottom_tab) ส่วนหน้าแรก(หน้าMain) จะอยู่ใน Screen/HomeScreen.js
 
 
-ถ้าใคร Run ไม่ได้ให้ติดตั้งตัวเสริมตามนี้
+ถ้าใคร Run ไม่ได้ให้ติดตั้งตัวเสริมตามนี้ (ไม่มีอันไหนก็ลงอันนั้นแหละ)
 
     "@react-native-community/masked-view": "^0.1.5",
     "@react-navigation/bottom-tabs": "^5.1.0",
