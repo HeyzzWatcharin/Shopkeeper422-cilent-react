@@ -56,7 +56,7 @@
     "react-native-screens": "^2.0.0-alpha.12",
     "react-native-web": "~0.11.7"
 
-วิธีก็ "npm install _______ตามชื่อมันเลย_______"
+วิธีติดตั้ง "npm install _______ตามชื่อมันเลย_______"
 
 
-เช่น " npm install @react-navigation/native "
+ตัวอย่าง " npm install @react-navigation/native "
