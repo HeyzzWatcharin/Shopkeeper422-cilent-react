@@ -11,8 +11,7 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
 function MainScreen({ navigation }) {
   return (
-    <HomeScreen>
-    </HomeScreen>
+    <HomeScreen/>
   );
 }
 
@@ -68,7 +67,7 @@ function MyTabs1() {
         name="Home"
         component={MainScreen}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'HOME',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
@@ -78,7 +77,7 @@ function MyTabs1() {
         name="Profile"
         component={Screen1}
         options={{
-          tabBarLabel: 'face-profile',
+          tabBarLabel: 'PROFILE',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="face-profile" color={color} size={size} />
           ),
@@ -88,7 +87,7 @@ function MyTabs1() {
         name="Manage"
         component={Screen3}
         options={{
-          tabBarLabel: 'basket',
+          tabBarLabel: 'BASKET',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="basket" color={color} size={size} />
           ),
