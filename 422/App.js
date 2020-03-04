@@ -5,12 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import ProductManage from './Components/ProductManage';
 import ProductDetail from './Components/ProductDetail';
 
 
 function MainScreen({ navigation }) {
   return (
-    <ProductDetail/>
+    <ProductManage/>
   );
 }
 
