@@ -11,6 +11,9 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Search from './Search';
+import Slider from '../Components/Slider';
+import Smallcontainer from '../HomeContainer/Smallcontainer'
+
 
 export default class HomeScreen extends React.Component {
 
@@ -24,216 +27,60 @@ export default class HomeScreen extends React.Component {
                     </View>
                 </View>
                 <Search></Search>
+
+                {/* ---------------------------------------------------------------------------- */}
                 <ScrollView >
                     <View style={styles.pscontainer}>
                         <Text style={styles.pstext}>Promotion</Text>
                     </View>
+                    <Slider />
+                    {/* ------------------------------------------------------------------------ */}
+                    <View style={styles.pscontainer}>
+                        <Text style={styles.pstext}>TOP SALE</Text>
+                    </View>
                     <View style={styles.bigcontainer}>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
-                        </View>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
-                        </View>
-
+                        <Smallcontainer />
+                        <Smallcontainer />
                     </View>
 
-
                     <View style={styles.bigcontainer}>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
-                        </View>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
-                        </View>
-
+                        <Smallcontainer />
+                        <Smallcontainer />
                     </View>
 
+                    {/* ------------------------------------------------------------------------ */}
 
                     <View style={styles.bigcontainer}>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Drink</Text>
                         </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}>
 
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
+                            <Smallcontainer />
+                            <Smallcontainer />
+                            <Smallcontainer />
+                            <Smallcontainer />
 
-                        </View>
-
+                        </ScrollView>
                     </View>
-
-
 
                     <View style={styles.bigcontainer}>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Drink</Text>
                         </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}>
 
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
+                            <Smallcontainer />
+                            <Smallcontainer />
+                            <Smallcontainer />
+                            <Smallcontainer />
 
-                        </View>
-
+                        </ScrollView>
                     </View>
-
-
-
-                    <View style={styles.bigcontainer}>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
-                        </View>
-
-                        <View elevation={5} style={styles.smallcontainer}>
-                            <View style={styles.productcontainer}>
-                                <Image
-                                    resizeMode='cover' style={styles.productimage} source={require('../Image/X.png')}
-                                />
-                            </View>
-                            <Text style={styles.detailtext}>
-                                Name : xxxx
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                Price : xxxx Baht
-                            </Text>
-                            <Text style={styles.detailtext}>
-                                QTY : xxxx
-                            </Text>
-
-                        </View>
-
-                    </View>
-
                 </ScrollView>
             </View>
         );
@@ -260,28 +107,16 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     bigcontainer: {
-        height: 230,
+        height: 275,
         backgroundColor: '#fff',
         marginTop: 30,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
     },
-    smallcontainer: {
-        height: 200,
-        width: 150,
-        backgroundColor: '#fff',
-        marginVertical: 15,
-    },
-    productcontainer: {
-        height: 120,
-        backgroundColor: 'black',
-    },
-    productimage: {
-        width: undefined,
-        height: 120,
-    },
-    detailtext: {
-        paddingHorizontal: 10,
+    titlebigcontainer: {
+        height: 50,
+        position: 'absolute',
+
     },
     pscontainer: {
         height: 60,
@@ -294,5 +129,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 15,
         fontSize: 18,
-    }
+    },
+    titletext: {
+        paddingTop: 10,
+        paddingLeft: 20,
+        fontSize: 20,
+        color: '#80D444',
+    },
 });

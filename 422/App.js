@@ -6,6 +6,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Components/HomeScreen'
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import  AnalysisScreen from './Components/AnalysisScreen';
 
 
 
@@ -17,9 +18,11 @@ function MainScreen({ navigation }) {
 
 function Screen1({ navigation }) {
   return (
+    
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile</Text>
-    </View>
+    <Text>Screen2</Text>
+  </View>
+    
   );
 }
 
@@ -34,7 +37,7 @@ function Screen2({ navigation }) {
 function Screen3({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen3</Text>
+      <AnalysisScreen/>
     </View>
   );
 }
@@ -85,7 +88,7 @@ function MyTabs1() {
       />
       <Tab.Screen
         name="Manage"
-        component={Screen3}
+        component={Screen2}
         options={{
           tabBarLabel: 'BASKET',
           tabBarIcon: ({ color, size }) => (
