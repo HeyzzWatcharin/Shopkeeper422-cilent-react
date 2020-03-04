@@ -4,14 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './Components/HomeScreen'
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-
+import ProductDetail from './Components/ProductDetail';
 
 
 function MainScreen({ navigation }) {
   return (
-    <HomeScreen/>
+    <ProductDetail/>
   );
 }
 

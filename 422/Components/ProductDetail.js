@@ -9,15 +9,18 @@ import {
   View,
   Button
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import Search from './Search';
 
 export default class ProductDetail extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <ScrollView>
+          <Image
+            style={{ width: 26, height: 26, marginTop: 35, marginLeft: 15 }}
+            source={require('../Image/back-left-arrow-botton.png')}
+          ></Image>
           <View style={styles.promoZone}></View>
+
           <View style={styles.pDetailZone}>
             <View style={styles.pDetailHead}>
               <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Sprite</Text>
@@ -48,6 +51,30 @@ export default class ProductDetail extends React.Component {
                 >
                   <Text style={{ color: '#717983', padding: 5 }}>3.5</Text>
                   <Text style={{ color: '#717983', padding: 5 }}>RATING</Text>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      width: 120
+                    }}
+                  >
+                    <Image
+                      style={{
+                        width: 21,
+                        height: 21,
+                        marginRight: 10
+                      }}
+                      source={require('../Image/ic_rateUp.png')}
+                    ></Image>
+                    <Image
+                      style={{
+                        width: 21,
+                        height: 21,
+                        marginLeft: 10
+                      }}
+                      source={require('../Image/ic_rateDown.png')}
+                    ></Image>
+                  </View>
                 </View>
                 <View style={{ paddingHorizontal: 10, alignItems: 'center' }}>
                   <Text style={{ color: '#717983', padding: 5 }}>3</Text>
@@ -87,7 +114,16 @@ export default class ProductDetail extends React.Component {
                     color: '#51C400'
                   }}
                 >
-                  X1 item
+                  <Text>X1 item </Text>
+                  <Image
+                    style={{ width: 26, height: 26 }}
+                    source={require('../Image/ic_add_24px.png')}
+                  ></Image>
+                  <Text> </Text>
+                  <Image
+                    style={{ width: 26, height: 26 }}
+                    source={require('../Image/ic_remove_24px.png')}
+                  ></Image>
                 </Text>
               </View>
               <View>
@@ -118,6 +154,7 @@ export default class ProductDetail extends React.Component {
               </Text>
               <View>
                 <Text style={{ color: '#317600', marginTop: 18 }}>Mr.zero</Text>
+                <Text style={{ color: '#BBBBBB' }}>20/12/03 Fri 2 P.M.</Text>
               </View>
               <View
                 style={{
@@ -154,6 +191,6 @@ const styles = StyleSheet.create({
   qtyZone: {
     flexDirection: 'row',
     justifyContent: 'center',
-    padding: 30
+    padding: 50
   }
 });
