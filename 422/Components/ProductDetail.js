@@ -152,6 +152,7 @@ export default class ProductDetail extends React.Component {
               >
                 Comments
               </Text>
+
               <View>
                 <Text style={{ color: '#317600', marginTop: 18 }}>Mr.zero</Text>
                 <Text style={{ color: '#BBBBBB' }}>20/12/03 Fri 2 P.M.</Text>
