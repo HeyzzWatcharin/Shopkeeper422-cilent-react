@@ -4,21 +4,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import HomeScreen from './Components/HomeScreen';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-import ProductManage from './Components/ProductManage';
-import ProductDetail from './Components/ProductDetail';
-
+// import ProductManage from './Components/ProductManage';
+// import ProductDetail from './Components/ProductDetail';
+import ProductAnalysis from './Components/ProductAnalysis';
+// import ProductManage from './Components/ProductManage';
 
 function MainScreen({ navigation }) {
-  return (
-    <ProductManage/>
-  );
+  return <ProductAnalysis />;
 }
 
 function Screen1({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile</Text>
+      <Text>Screen2</Text>
     </View>
   );
 }
@@ -34,7 +34,7 @@ function Screen2({ navigation }) {
 function Screen3({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen3</Text>
+      <AnalysisScreen />
     </View>
   );
 }
@@ -59,7 +59,6 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-
 function MyTabs1() {
   return (
     <Tab.Navigator>
@@ -70,7 +69,7 @@ function MyTabs1() {
           tabBarLabel: 'HOME',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
+          )
         }}
       />
       <Tab.Screen
@@ -79,18 +78,22 @@ function MyTabs1() {
         options={{
           tabBarLabel: 'PROFILE',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="face-profile" color={color} size={size} />
-          ),
+            <MaterialCommunityIcons
+              name="face-profile"
+              color={color}
+              size={size}
+            />
+          )
         }}
       />
       <Tab.Screen
         name="Manage"
-        component={Screen3}
+        component={Screen2}
         options={{
           tabBarLabel: 'BASKET',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="basket" color={color} size={size} />
-          ),
+          )
         }}
       />
     </Tab.Navigator>
