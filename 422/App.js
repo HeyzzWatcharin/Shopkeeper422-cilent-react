@@ -4,15 +4,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import HomeScreen from './Components/HomeScreen';
+import HomeScreen from './Components/HomeScreen';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 // import ProductManage from './Components/ProductManage';
 // import ProductDetail from './Components/ProductDetail';
 import ProductAnalysis from './Components/ProductAnalysis';
-// import ProductManage from './Components/ProductManage';
+import ProductManage from './Components/ProductManage';
 
 function MainScreen({ navigation }) {
-  return <ProductAnalysis />;
+  return <ProductManage />;
 }
 
 function Screen1({ navigation }) {
@@ -34,7 +34,7 @@ function Screen2({ navigation }) {
 function Screen3({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <AnalysisScreen />
+      <Text>Test</Text>
     </View>
   );
 }
