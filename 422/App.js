@@ -7,12 +7,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Components/HomeScreen'
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import AnalysisScreen from './Components/AnalysisScreen';
+import Navbar from './Components/Navbar'
 
 
 
 function MainScreen({ navigation }) {
   return (
-    <HomeScreen />
+   <HomeScreen/>
   );
 }
 
@@ -121,7 +122,7 @@ function Mydrawer() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Mydrawer/>
+      <Mydrawer />
     </NavigationContainer>
   );
 }
