@@ -6,23 +6,23 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Components/HomeScreen'
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-import  AnalysisScreen from './Components/AnalysisScreen';
+import AnalysisScreen from './Components/AnalysisScreen';
 
 
 
 function MainScreen({ navigation }) {
   return (
-    <HomeScreen/>
+    <HomeScreen />
   );
 }
 
 function Screen1({ navigation }) {
   return (
-    
+
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Screen2</Text>
-  </View>
-    
+      <Text>Screen2</Text>
+    </View>
+
   );
 }
 
@@ -37,7 +37,7 @@ function Screen2({ navigation }) {
 function Screen3({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <AnalysisScreen/>
+      <AnalysisScreen />
     </View>
   );
 }
@@ -109,13 +109,19 @@ function MyTabs2() {
   );
 }
 
+function Mydrawer() {
+  return (
+    <Drawer.Navigator initialRouteName="Stack1">
+      <Drawer.Screen name="Mytabs1" component={MyTabs1} />
+      <Drawer.Screen name="Mytabs2" component={MyTabs2} />
+    </Drawer.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Stack1">
-        <Drawer.Screen name="Mytabs1" component={MyTabs1} />
-        <Drawer.Screen name="Mytabs2" component={MyTabs2} />
-      </Drawer.Navigator>
+      <Mydrawer/>
     </NavigationContainer>
   );
 }
