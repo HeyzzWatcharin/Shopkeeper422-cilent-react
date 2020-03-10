@@ -4,13 +4,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './Components/HomeScreen';
+// import HomeScreen from './Components/HomeScreen';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-import { ScrollView } from 'react-native-gesture-handler';
-// import AnalysisScreen from './Components/AnalysisScreen';
+// import { ScrollView } from 'react-native-gesture-handler';
+// // import AnalysisScreen from './Components/AnalysisScreen';
+import ProductManage from './Components/ProductManage';
+// import HomeScreen from './Components/HomeScreen';
 
 function MainScreen({ navigation }) {
-  return <HomeScreen />;
+  return <ProductManage />;
 }
 
 function Screen1({ navigation }) {
