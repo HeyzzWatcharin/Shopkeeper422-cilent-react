@@ -1,71 +1,47 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import Search from './Search';
-import Slider from '../Components/Slider';
-import Smallcontainer from '../HomeContainer/Smallcontainer';
+import Slider from './Slider';
+import Categorycontainer from '../HomeContainer/Categorycontainer';
+import Topsalecontainer from '../HomeContainer/Topsalecontainer';
+import Navbar from './Navbar';
 
 export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.maincontainer}>
-        <View style={styles.toptoolbar}>
-          <View style={styles.boxtoptoolbar}>
-            <Ionicons name="ios-arrow-dropright" size={32} color="white" />
-            <Ionicons name="ios-home" size={32} color="white" />
-          </View>
-        </View>
-        <Search></Search>
-
+        <Navbar />
         {/* ---------------------------------------------------------------------------- */}
         <ScrollView>
           <View style={styles.pscontainer}>
-            <Text style={styles.pstext}>Promotion</Text>
+            <Text style={styles.promoTitle}>Promotion</Text>
           </View>
           <Slider />
           {/* ------------------------------------------------------------------------ */}
           <View style={styles.pscontainer}>
-            <Text style={styles.pstext}>TOP SALE</Text>
+            <Text style={styles.promoTitle}>TOP SALE</Text>
           </View>
-          <View style={styles.bigcontainer}>
-            <Smallcontainer />
-            <Smallcontainer />
-          </View>
-
-          <View style={styles.bigcontainer}>
-            <Smallcontainer />
-            <Smallcontainer />
+          <View style={styles.topsalecontainer}>
+            <Topsalecontainer />
+            <Topsalecontainer />
           </View>
 
           {/* ------------------------------------------------------------------------ */}
 
-          <View style={styles.bigcontainer}>
+          <View style={styles.categorycontainer}>
             <View style={styles.titlebigcontainer}>
               <Text style={styles.titletext}>Drink</Text>
             </View>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-            >
-              <Smallcontainer />
-              <Smallcontainer />
-              <Smallcontainer />
-              <Smallcontainer />
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
+              <Categorycontainer />
             </ScrollView>
           </View>
 
-          <View style={styles.bigcontainer}>
+          <View style={styles.categorycontainer}>
             <View style={styles.titlebigcontainer}>
               <Text style={styles.titletext}>Drink</Text>
             </View>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-            >
-              <Smallcontainer />
-              <Smallcontainer />
-              <Smallcontainer />
-              <Smallcontainer />
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
+              <Categorycontainer />
             </ScrollView>
           </View>
         </ScrollView>
@@ -93,12 +69,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between'
   },
-  bigcontainer: {
+  categorycontainer: {
     height: 275,
     backgroundColor: '#fff',
     marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-evenly'
+  },
+  topsalecontainer: {
+    height: 550,
+    backgroundColor: '#fff'
   },
   titlebigcontainer: {
     height: 50,
@@ -110,7 +90,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center'
   },
-  pstext: {
+  promoTitle: {
+    textTransform: 'uppercase',
     color: '#fff',
     alignItems: 'center',
     padding: 15,

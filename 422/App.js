@@ -4,15 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import HomeScreen from './Components/HomeScreen';
+import HomeScreen from './Components/HomeScreen';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-// import ProductManage from './Components/ProductManage';
-// import ProductDetail from './Components/ProductDetail';
-import ProductAnalysis from './Components/ProductAnalysis';
-// import ProductManage from './Components/ProductManage';
+import { ScrollView } from 'react-native-gesture-handler';
+// import AnalysisScreen from './Components/AnalysisScreen';
 
 function MainScreen({ navigation }) {
-  return <ProductAnalysis />;
+  return <HomeScreen />;
 }
 
 function Screen1({ navigation }) {
@@ -109,13 +107,19 @@ function MyTabs2() {
   );
 }
 
+function Mydrawer() {
+  return (
+    <Drawer.Navigator initialRouteName="Stack1">
+      <Drawer.Screen name="Mytabs1" component={MyTabs1} />
+      <Drawer.Screen name="Mytabs2" component={MyTabs2} />
+    </Drawer.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Stack1">
-        <Drawer.Screen name="Mytabs1" component={MyTabs1} />
-        <Drawer.Screen name="Mytabs2" component={MyTabs2} />
-      </Drawer.Navigator>
+      <Mydrawer />
     </NavigationContainer>
   );
 }
