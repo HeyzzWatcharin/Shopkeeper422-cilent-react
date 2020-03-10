@@ -35,7 +35,7 @@ export default class Navbar extends Component {
         return (
             <View>
                 <View style={styles.containerNavbar}>
-                    <Icon name="list" size={25} color="#fff" />
+                    <Text style={styles.slidetext} >SLIDE --></Text>
                     <Icon name={this.props.icon} size={25} color="#fff" />
                     <Icon name="search" size={25} color="#fff" onPress={this.HideAndShow} />
                 </View>
@@ -62,4 +62,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingTop: 25
     },
+    slidetext:{
+        color:'white',
+        fontSize:30,
+        fontWeight:'bold',
+    }
 })
