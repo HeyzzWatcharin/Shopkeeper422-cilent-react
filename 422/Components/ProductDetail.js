@@ -5,9 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View,
-  Button
+  View
 } from 'react-native';
 
 export default class ProductDetail extends React.Component {
