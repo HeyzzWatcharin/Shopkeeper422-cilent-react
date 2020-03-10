@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     categorycontainer: {
+        flex:1,
         height: 275,
         backgroundColor: '#fff',
         marginTop: 30,
@@ -108,7 +109,6 @@ const styles = StyleSheet.create({
     pscontainer: {
         height: 60,
         backgroundColor: '#0C5800',
-        marginTop: 20,
         alignItems: 'center',
     },
     pstitle: {

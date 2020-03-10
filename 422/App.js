@@ -6,9 +6,21 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Components/HomeScreen'
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-import AnalysisScreen from './Components/AnalysisScreen';
-import Navbar from './Components/Navbar'
+import  ProductAnalysis from './Components/ProductAnalysis'
+import  ProductDetail from './Components/ProductDetail'
+import  ProductManage from './Components/ProductManage'
 
+
+const MyTheme = {
+  dark: false,
+  colors: {
+    primary: '#80D444',
+    background: 'white',
+    card: 'white',
+    text: 'gray',
+    border: '#f1f1f1',
+  },
+};
 
 
 function MainScreen({ navigation }) {
@@ -37,24 +49,20 @@ function Screen2({ navigation }) {
 
 function Screen3({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <AnalysisScreen />
-    </View>
+    <ProductAnalysis/>
   );
 }
 
 function Screen4({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen4</Text>
-    </View>
+    <ProductManage/>
   );
 }
 
 function Screen5({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen5</Text>
+      <Text>Log in/out</Text>
     </View>
   );
 }
@@ -102,26 +110,65 @@ function MyTabs1() {
 }
 function MyTabs2() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="3" component={Screen3} />
-      <Tab.Screen name="4" component={Screen4} />
-      <Tab.Screen name="5" component={Screen5} />
+    <Tab.Navigator initialRouteName="Product Analysis">
+      <Tab.Screen name="Product Analysis"
+       component={Screen3}
+       options={{
+        tabBarLabel: 'Product Analysis',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="chart-pie" color={color} size={size} />
+        ),
+      }} />
+      <Tab.Screen name="Product Management" 
+      component={Screen4}
+      options={{
+        tabBarLabel: 'Product Management',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="playlist-plus" color={color} size={size} />
+        ),
+      }} />
     </Tab.Navigator>
   );
 }
 
+function MyTabs3() {
+  return (
+    <Tab.Navigator initialRouteName="Product Management">
+      <Tab.Screen name="Product Analysis"
+       component={Screen3}
+       options={{
+        tabBarLabel: 'Product Analysis',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="chart-pie" color={color} size={size} />
+        ),
+      }} />
+      <Tab.Screen name="Product Management" 
+      component={Screen4}
+      options={{
+        tabBarLabel: 'Product Management',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="playlist-plus" color={color} size={size} />
+        ),
+      }} />
+    </Tab.Navigator>
+  );
+}
+
+
 function Mydrawer() {
   return (
-    <Drawer.Navigator initialRouteName="Stack1">
-      <Drawer.Screen name="Mytabs1" component={MyTabs1} />
-      <Drawer.Screen name="Mytabs2" component={MyTabs2} />
+    <Drawer.Navigator >
+      <Drawer.Screen name="Home" component={MyTabs1} />
+      <Drawer.Screen name="Product Analysis" component={MyTabs2} />
+      <Drawer.Screen name="Product Management" component={MyTabs3} />
+      <Drawer.Screen name="Log in/out" component={Screen5} />
     </Drawer.Navigator>
   );
 }
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Mydrawer />
     </NavigationContainer>
   );
