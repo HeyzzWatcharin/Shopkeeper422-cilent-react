@@ -8,12 +8,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 // import { ScrollView } from 'react-native-gesture-handler';
 // // import AnalysisScreen from './Components/AnalysisScreen';
-// import ProductManage from './Components/ProductManage';
+import ProductManage from './Components/ProductManage';
+import ProductAnalysis from './Components/ProductAnalysis';
 // import HomeScreen from './Components/HomeScreen';
-import ProductDetail from './Components/ProductDetail'
+// import ProductDetail from './Components/ProductDetail'
 
 function MainScreen({ navigation }) {
-  return <ProductDetail />;
+  return <ProductAnalysis />;
 }
 
 function Screen1({ navigation }) {

@@ -10,18 +10,16 @@ export default class MostThreeSold extends React.Component {
     return (
       <View>
         <Text style={styles.title}>
-          <Image
-            style={{}}
-            source={require('../../Image/ic_show_chart_24px.png')}
-          ></Image>
+          <Image source={require('../../Image/ic_show_chart_24px.png')}></Image>
           MOSTEST 3 PRODUCT SOLD
         </Text>
-        <PieChart
-          style={styles.PieCh}
-          chart_wh={chart_wh}
-          series={series}
-          sliceColor={sliceColor}
-        />
+        <View style={styles.PieCh}>
+          <PieChart
+            chart_wh={chart_wh}
+            series={series}
+            sliceColor={sliceColor}
+          />
+        </View>
       </View>
     );
   }
@@ -32,5 +30,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     textTransform: 'uppercase',
     fontSize: 20
-  }
+  },
+  PieCh: { flex: 1, justifyContent: 'center', alignItems: 'center', margin: 20 }
 });
