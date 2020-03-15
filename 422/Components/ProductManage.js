@@ -13,13 +13,11 @@ import TopSalesZone from './Management/TopSalesZone';
 import CategoriesZone from './Management/CategoriesZone';
 import ProductAddEdit from './Management/ProductAddEdit';
 import ProductZone from './Management/ProductZone';
-import Navbar from './Navbar'
 
 export default class ProductManage extends React.Component {
   render() {
     return (
-      <View style={styles.maincontainer}>
-        <Navbar />
+      
         <View style={styles.container}>
           <ScrollView>
             <HeadZone />
@@ -29,7 +27,7 @@ export default class ProductManage extends React.Component {
             <ProductAddEdit />
           </ScrollView>
         </View>
-      </View>
+      
     );
   }
 }
@@ -41,8 +39,5 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     backgroundColor: '#fff'
   },
-  maincontainer: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+  
 });

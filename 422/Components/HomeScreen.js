@@ -13,7 +13,7 @@ import {
 import Slider from '../Components/Slider';
 import Categorycontainer from '../HomeContainer/Categorycontainer'
 import Topsalecontainer from '../HomeContainer/Topsalecontainer'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 
 export default class HomeScreen extends React.Component {
@@ -21,7 +21,7 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
             <View style={styles.maincontainer}>
-                <Navbar/>
+                {/* <Navbar/> */}
                 {/* ---------------------------------------------------------------------------- */}
                 <ScrollView >
                     <View style={styles.pscontainer}>

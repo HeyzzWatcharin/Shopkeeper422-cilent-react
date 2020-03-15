@@ -2,13 +2,11 @@ import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import PieChart from 'react-native-pie-chart';
 import { Table, Row, Rows } from 'react-native-table-component';
-import Navbar from './Navbar'
 
 export default class ProductAnalysis extends React.Component {
   render() {
     return (
-      <View style={styles.maincontainer}>
-        <Navbar/>
+      
         <View style={styles.container}>
           <ScrollView>
             <Text style={styles.header}>Product Analysis</Text>
@@ -16,7 +14,7 @@ export default class ProductAnalysis extends React.Component {
             <RankedSold />
           </ScrollView>
         </View>
-      </View>
+      
     );
   }
 }
@@ -92,10 +90,7 @@ class RankedSold extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  maincontainer:{
-    flex:1,
-    backgroundColor:'#fff',
-  },
+  
   container: {
     flex: 1,
     backgroundColor: '#fff',
