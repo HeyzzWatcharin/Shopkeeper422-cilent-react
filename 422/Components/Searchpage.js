@@ -24,7 +24,6 @@ class Searchpage extends Component {
   getData = async () => {
     const url = `https://jsonplaceholder.typicode.com/users`;
     this.setState({ loading: true });
-
     try {
       const response = await fetch(url);
       const json = await response.json();
@@ -62,7 +61,7 @@ class Searchpage extends Component {
             <Text style={styles.texttitle}>title</Text>
             <View style={styles.priceandqty}>
               <Text style={styles.pricetext}>{`${item.id}`}</Text>
-              <Text style={styles.qtytext}>{`${item.username}`}</Text>
+              <Text style={styles.qtytext}>{`${item.name}`}</Text>
             </View>
           </View>
         </View>
@@ -81,9 +80,9 @@ class Searchpage extends Component {
       }
 
       this.state.data = this.state.temp.filter(function (item) {
-        return item.username.includes(search);
-      }).map(function ({ id, username }) {
-        return { id, username };
+        return item.name.includes(search);
+      }).map(function ({ id, name }) {
+        return { id, name };
       });
     });
   };
@@ -102,7 +101,7 @@ class Searchpage extends Component {
         <FlatList
           ListHeaderComponent={this.renderHeader}
           data={this.state.data}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.name}
           renderItem={({ item }) => this.renderItem(item)}
         />
     );
