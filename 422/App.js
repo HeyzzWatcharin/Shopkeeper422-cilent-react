@@ -235,7 +235,19 @@ function Stack1({ navigation }) {
           },
         }}
       />
-      <Stack.Screen name="Search" component={Searchfilter} />
+      <Stack.Screen
+        name="Search"
+        component={Searchfilter}
+        options={{
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontSize: 30
+          },
+          headerStyle: {
+            backgroundColor: '#80D444',
+          },
+        }}
+      />
     </Stack.Navigator>
   );
 }
