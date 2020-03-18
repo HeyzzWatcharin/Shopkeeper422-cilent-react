@@ -32,11 +32,7 @@ function MainScreen({ navigation }) {
 
 function Screen1({ navigation }) {
   return (
-
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen2</Text>
-    </View>
-
+      <ProductDetail/>
   );
 }
 
