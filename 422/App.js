@@ -10,11 +10,14 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 // // import AnalysisScreen from './Components/AnalysisScreen';
 import ProductManage from './Components/ProductManage';
 import ProductAnalysis from './Components/ProductAnalysis';
+import ProductDetail from './Components/ProductDetail';
 // import HomeScreen from './Components/HomeScreen';
 // import ProductDetail from './Components/ProductDetail'
+import LogIn from './Components/LogIn';
+import Register from './Components/Register';
 
 function MainScreen({ navigation }) {
-  return <ProductAnalysis />;
+  return <Register />;
 }
 
 function Screen1({ navigation }) {
