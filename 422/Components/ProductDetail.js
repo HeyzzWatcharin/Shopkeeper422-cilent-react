@@ -99,7 +99,7 @@ export default class ProductDetail extends React.Component {
                 </Text>
               </View>
               <View>
-                <Text style={styles.addBastketBox}>ยืนยันการขาย</Text>
+                <Text style={styles.addBastketBox}>เพิ่มเข้ารายการ</Text>
               </View>
             </View>
 
@@ -138,7 +138,6 @@ const styles = StyleSheet.create({
     height: 300
   },
   pDetailZone: {
-    height: 600,
     backgroundColor: '#FFF',
     padding: 30
   },
