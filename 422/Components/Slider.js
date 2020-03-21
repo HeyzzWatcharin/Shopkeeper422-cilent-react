@@ -11,7 +11,6 @@ export default class Slider extends Component {
         "https://source.unsplash.com/1024x768/?water",
         "https://source.unsplash.com/1024x768/?girl",
         "https://source.unsplash.com/1024x768/?tree",
-        require('../Image/X.png'),
       ]
     };
   }
