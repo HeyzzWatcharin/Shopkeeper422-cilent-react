@@ -11,11 +11,6 @@ import {
 
 export default function Catagorycontainer({navigation}) {
 
-
-    function navigateToDetail() {
-        navigation.navigate('Screen1');
-    }
-
     function Item({ navigation }) {
         return (
             <TouchableOpacity onPress = {navigateToDetail}>
