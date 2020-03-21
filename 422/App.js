@@ -25,15 +25,15 @@ const MyTheme = {
 };
 // ---------------------------------Screen--------------------------------------------------------------------------------------------------
 
-function Screen2({ navigation }) {
+function Screen1({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Tex>Manage</Tex>
+      <Text>Manage</Text>
     </View>
   );
 }
 
-function Screen5({ navigation }) {
+function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Log in/out</Text>
@@ -73,7 +73,7 @@ function MyTabs1() {
       />
       <Tab.Screen
         name="Manage"
-        component={Screen2}
+        component={Screen1}
         options={{
           tabBarLabel: 'BASKET',
           tabBarIcon: ({ color, size }) => (
@@ -147,7 +147,7 @@ function Mydrawer() {
               size={20} />
           ),
         }} />
-      <Drawer.Screen name="Log in/out" component={Screen5}
+      <Drawer.Screen name="Log in/out" component={Screen2}
         options={{
           drawerIcon: () => (
             <Icon
@@ -157,7 +157,6 @@ function Mydrawer() {
           ),
         }}
       />
-      <Drawer.Screen name='test' component={HomeScreen} />
     </Drawer.Navigator>
   );
 }
