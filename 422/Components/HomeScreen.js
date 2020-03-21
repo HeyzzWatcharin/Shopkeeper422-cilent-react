@@ -30,8 +30,7 @@ export default function HomeScreen({ navigation }) {
                     <Text style={styles.pstitle}>TOP SALE</Text>
                 </View>
                 <View style={styles.topsalecontainer}>
-                    <Topsalecontainer />
-                    <Topsalecontainer />
+                    <Topsalecontainer navigation={navigation}/>
                 </View>
 
                 {/* ------------------------------------------------------------------------ */}
