@@ -3,7 +3,17 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Search from './Search';
 import Slider from '../Components/Slider';
+<<<<<<< HEAD
 import Smallcontainer from '../HomeContainer/Smallcontainer';
+=======
+import Categorycontainer from '../HomeContainer/Categorycontainer'
+import Snackcontainer from '../HomeContainer/Snackcontainer'
+import Noodlecontainer from '../HomeContainer/Noodlecontainer'
+import Lunchcontainer from '../HomeContainer/Lunchcontainer'
+import Topsalecontainer from '../HomeContainer/Topsalecontainer'
+// import Navbar from './Navbar'
+
+>>>>>>> fetch data
 
 export default class HomeScreen extends React.Component {
   render() {
@@ -39,6 +49,7 @@ export default class HomeScreen extends React.Component {
 
           {/* ------------------------------------------------------------------------ */}
 
+<<<<<<< HEAD
           <View style={styles.bigcontainer}>
             <View style={styles.titlebigcontainer}>
               <Text style={styles.titletext}>Drink</Text>
@@ -53,6 +64,43 @@ export default class HomeScreen extends React.Component {
               <Smallcontainer />
             </ScrollView>
           </View>
+=======
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Snack</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Snackcontainer />
+
+                        </ScrollView>
+                    </View>
+
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Instant noodle</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Noodlecontainer />
+
+                        </ScrollView>
+                    </View>
+
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Lunch box</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Lunchcontainer />
+>>>>>>> fetch data
 
           <View style={styles.bigcontainer}>
             <View style={styles.titlebigcontainer}>
