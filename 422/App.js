@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { Button, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -11,6 +11,8 @@ import ProductDetail from './Components/ProductDetail'
 import ProductManage from './Components/ProductManage'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Searchpage from './Components/Searchpage'
+import Categorycontainer from './HomeContainer/Categorycontainer'
+
 
 const MyTheme = {
   dark: false,
@@ -24,6 +26,11 @@ const MyTheme = {
 };
 // ---------------------------------Screen--------------------------------------------------------------------------------------------------
 
+// function navigateToDetail({navigation}) {
+//   navigation.navigate('Screen1');
+// }
+
+
 function MainScreen({ navigation }) {
   return (
     <HomeScreen />
@@ -32,14 +39,14 @@ function MainScreen({ navigation }) {
 
 function Screen1({ navigation }) {
   return (
-      <ProductDetail/>
+    <ProductDetail />
   );
 }
 
 function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Manage</Text>
+      <Tex>Manage</Tex>
     </View>
   );
 }
@@ -64,13 +71,11 @@ function Screen5({ navigation }) {
   );
 }
 
-
 function Searchfilter({ navigation }) {
   return (
     <Searchpage />
   );
 }
-
 
 // ---------------------------------Tab-------------------------------------------------------------------------------------
 function MyTabs1() {
@@ -140,6 +145,7 @@ function MyTabs3() {
     </Tab.Navigator>
   );
 }
+
 // -------------------------------Drawer----------------------------------------------------------------------------------------------------
 
 function Mydrawer() {
@@ -243,6 +249,10 @@ function Stack1({ navigation }) {
             backgroundColor: '#80D444',
           },
         }}
+      />
+      <Stack.Screen
+        name="Detail"
+        component={Screen1}
       />
     </Stack.Navigator>
   );

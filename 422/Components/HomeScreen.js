@@ -9,65 +9,61 @@ import {
     View,
     Button,
     ListView,
+    FlatList
 } from 'react-native';
 import Slider from '../Components/Slider';
 import Categorycontainer from '../HomeContainer/Categorycontainer'
 import Topsalecontainer from '../HomeContainer/Topsalecontainer'
-// import Navbar from './Navbar'
 
 
-export default class HomeScreen extends React.Component {
+export default function HomeScreen({ navigation }) {
 
-    render() {
-        return (
-            <View style={styles.maincontainer}>
-                {/* <Navbar/> */}
-                {/* ---------------------------------------------------------------------------- */}
-                <ScrollView >
-                    <View style={styles.pscontainer}>
-                        <Text style={styles.pstitle}>Promotion</Text>
+
+
+    return (
+        <View style={styles.maincontainer}>
+            {/* ---------------------------------------------------------------------------- */}
+            <ScrollView >
+                <View style={styles.pscontainer}>
+                    <Text style={styles.pstitle}>Promotion</Text>
+                </View>
+                <Slider />
+                {/* ------------------------------------------------------------------------ */}
+                <View style={styles.pscontainer}>
+                    <Text style={styles.pstitle}>TOP SALE</Text>
+                </View>
+                <View style={styles.topsalecontainer}>
+                    <Topsalecontainer />
+                    <Topsalecontainer />
+                </View>
+
+                {/* ------------------------------------------------------------------------ */}
+
+                <View style={styles.categorycontainer}>
+                    <View style={styles.titlebigcontainer}>
+                        <Text style={styles.titletext}>Drink</Text>
                     </View>
-                    <Slider />
-                    {/* ------------------------------------------------------------------------ */}
-                    <View style={styles.pscontainer}>
-                        <Text style={styles.pstitle}>TOP SALE</Text>
+                    <ScrollView
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={true}>
+                        <Categorycontainer />
+
+                    </ScrollView>
+                </View>
+
+                <View style={styles.categorycontainer}>
+                    <View style={styles.titlebigcontainer}>
+                        <Text style={styles.titletext}>Drink</Text>
                     </View>
-                    <View style={styles.topsalecontainer}>
-                    <Topsalecontainer/>
-                    <Topsalecontainer/>
-                    </View>
-
-                    {/* ------------------------------------------------------------------------ */}
-
-                    <View style={styles.categorycontainer}>
-                        <View style={styles.titlebigcontainer}>
-                            <Text style={styles.titletext}>Drink</Text>
-                        </View>
-                        <ScrollView
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={true}>
-
-                            <Categorycontainer />
-
-                        </ScrollView>
-                    </View>
-
-                    <View style={styles.categorycontainer}>
-                        <View style={styles.titlebigcontainer}>
-                            <Text style={styles.titletext}>Drink</Text>
-                        </View>
-                        <ScrollView
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={true}>
-
-                            <Categorycontainer />
-
-                        </ScrollView>
-                    </View>
-                </ScrollView>
-            </View>
-        );
-    }
+                    <ScrollView
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={true}>
+                        <Categorycontainer />
+                    </ScrollView>
+                </View>
+            </ScrollView>
+        </View >
+    );
 }
 
 const styles = StyleSheet.create({
@@ -90,16 +86,16 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     categorycontainer: {
-        flex:1,
+        flex: 1,
         height: 275,
         backgroundColor: '#fff',
         marginTop: 30,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
     },
-    topsalecontainer:{
-        height:550,
-        backgroundColor:'#fff'
+    topsalecontainer: {
+        height: 550,
+        backgroundColor: '#fff'
     },
     titlebigcontainer: {
         height: 50,
@@ -122,5 +118,36 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         fontSize: 20,
         color: '#80D444',
+    },
+
+    smallcontainer: {
+        backgroundColor: '#fff',
+        flex: 1,
+        height: 200,
+        marginHorizontal: 20,
+        marginVertical: 40,
+    },
+
+    imageproduct: {
+        width: 150,
+        height: 125,
+    },
+    description: {
+        paddingHorizontal: 10,
+    },
+    priceandqty: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    pricetext: {
+        color: '#51C400',
+        fontWeight: 'bold',
+        fontSize: 20,
+
+    },
+    qtyText: {
+        color: '#717983',
+        fontSize: 10,
     },
 });
