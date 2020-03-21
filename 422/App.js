@@ -11,7 +11,6 @@ import ProductDetail from './Components/ProductDetail'
 import ProductManage from './Components/ProductManage'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Searchpage from './Components/Searchpage'
-import Categorycontainer from './HomeContainer/Categorycontainer'
 
 
 const MyTheme = {
@@ -26,40 +25,11 @@ const MyTheme = {
 };
 // ---------------------------------Screen--------------------------------------------------------------------------------------------------
 
-// function navigateToDetail({navigation}) {
-//   navigation.navigate('Screen1');
-// }
-
-
-function MainScreen({ navigation }) {
-  return (
-    <HomeScreen />
-  );
-}
-
-function Screen1({ navigation }) {
-  return (
-    <ProductDetail />
-  );
-}
-
 function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Tex>Manage</Tex>
     </View>
-  );
-}
-
-function Screen3({ navigation }) {
-  return (
-    <ProductAnalysis />
-  );
-}
-
-function Screen4({ navigation }) {
-  return (
-    <ProductManage />
   );
 }
 
@@ -93,7 +63,7 @@ function MyTabs1() {
       />
       <Tab.Screen
         name="Profile"
-        component={Screen1}
+        component={ProductDetail}
         options={{
           tabBarLabel: 'PROFILE',
           tabBarIcon: ({ color, size }) => (
@@ -129,7 +99,6 @@ function MyTabs2() {
     </Tab.Navigator>
   );
 }
-
 function MyTabs3() {
   return (
     <Tab.Navigator initialRouteName="Product Management">
@@ -188,6 +157,7 @@ function Mydrawer() {
           ),
         }}
       />
+      <Drawer.Screen name='test' component={HomeScreen} />
     </Drawer.Navigator>
   );
 }
@@ -199,7 +169,7 @@ function Stack1({ navigation }) {
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={MainScreen}
+        component={HomeScreen}
         options={{
           title: 'Mainscreen',
           headerLeft: () => (
@@ -252,7 +222,7 @@ function Stack1({ navigation }) {
       />
       <Stack.Screen
         name="Detail"
-        component={Screen1}
+        component={ProductDetail}
       />
     </Stack.Navigator>
   );
@@ -263,7 +233,7 @@ function Stack2({ navigation }) {
     <Stack.Navigator initialRouteName="Product Analysis">
       <Stack.Screen
         name="Product Analysis"
-        component={Screen3}
+        component={ProductAnalysis}
         options={{
           headerLeft: () => (
             <Icon
@@ -290,7 +260,7 @@ function Stack2({ navigation }) {
       />
       <Stack.Screen
         name="Product Management"
-        component={Screen4}
+        component={ProductManage}
         options={{
           headerLeft: () => (
             <Icon
@@ -324,7 +294,7 @@ function Stack3({ navigation }) {
     <Stack.Navigator initialRouteName="Product Management">
       <Stack.Screen
         name="Product Analysis"
-        component={Screen3}
+        component={ProductAnalysis}
         options={{
           headerLeft: () => (
             <Icon
@@ -351,7 +321,7 @@ function Stack3({ navigation }) {
       />
       <Stack.Screen
         name="Product Management"
-        component={Screen4}
+        component={ProductManage}
         options={{
           headerLeft: () => (
             <Icon

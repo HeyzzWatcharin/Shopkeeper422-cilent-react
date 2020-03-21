@@ -6,35 +6,31 @@ import {
     TouchableOpacity,
     View,
     FlatList,
+    Button,
 } from 'react-native';
 
+export default function Catagorycontainer({ navigation }) {
 
-export default function Catagorycontainer({navigation}) {
 
-    function Item({ navigation }) {
-        return (
-            <TouchableOpacity onPress = {navigateToDetail}>
-                <View elevation={5} style={styles.smallcontainer}>
-                    <Image source={require('../Image/X.png')} style={styles.imageproduct} />
-                    <View style={styles.description}>
-                        <Text>title</Text>
-                        <View style={styles.priceandqty}>
-                            <Text style={styles.pricetext}>฿ : 16</Text>
-                            <Text style={styles.qtytext}>QTY : 5</Text>
-                        </View>
-                    </View>
-                </View>
-            </TouchableOpacity>
-        );
-    }
     return (
-        <View>
-            <FlatList
-                horizontal={true}
-                data={[1, 2, 3, 4, 5]}
-                renderItem={({ item }) => <Item />}
-            />
-        </View>
+        <FlatList
+            horizontal={true}
+            data={[1, 2, 3, 4, 5]}
+            renderItem={({ item }) =>
+                <View elevation={5} style={styles.smallcontainer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Detail')}  >
+                        <Image source={require('../Image/X.png')} style={styles.imageproduct} />
+                        <View style={styles.description}>
+                            <Text>title</Text>
+                            <View style={styles.priceandqty}>
+                                <Text style={styles.pricetext}>฿ : 16</Text>
+                                <Text style={styles.qtytext}>QTY : 5</Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+            }
+        />
     );
 }
 

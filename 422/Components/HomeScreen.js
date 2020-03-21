@@ -12,14 +12,11 @@ import {
     FlatList
 } from 'react-native';
 import Slider from '../Components/Slider';
-import Categorycontainer from '../HomeContainer/Categorycontainer'
 import Topsalecontainer from '../HomeContainer/Topsalecontainer'
-
+import Categorycontainer from '../HomeContainer/Categorycontainer'
+import { enableScreens } from 'react-native-screens';
 
 export default function HomeScreen({ navigation }) {
-
-
-
     return (
         <View style={styles.maincontainer}>
             {/* ---------------------------------------------------------------------------- */}
@@ -46,8 +43,7 @@ export default function HomeScreen({ navigation }) {
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={true}>
-                        <Categorycontainer />
-
+                        <Categorycontainer navigation={navigation} />
                     </ScrollView>
                 </View>
 
@@ -58,7 +54,7 @@ export default function HomeScreen({ navigation }) {
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={true}>
-                        <Categorycontainer />
+                        <Categorycontainer navigation={navigation} />
                     </ScrollView>
                 </View>
             </ScrollView>
