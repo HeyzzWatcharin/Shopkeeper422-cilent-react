@@ -9,56 +9,94 @@ import {
     View,
     Button,
     ListView,
-    FlatList
 } from 'react-native';
 import Slider from '../Components/Slider';
-import Topsalecontainer from '../HomeContainer/Topsalecontainer'
 import Categorycontainer from '../HomeContainer/Categorycontainer'
-import { enableScreens } from 'react-native-screens';
+import Snackcontainer from '../HomeContainer/Snackcontainer'
+import Noodlecontainer from '../HomeContainer/Noodlecontainer'
+import Lunchcontainer from '../HomeContainer/Lunchcontainer'
+import Topsalecontainer from '../HomeContainer/Topsalecontainer'
+// import Navbar from './Navbar'
 
-export default function HomeScreen({ navigation }) {
-    return (
-        <View style={styles.maincontainer}>
-            {/* ---------------------------------------------------------------------------- */}
-            <ScrollView >
-                <View style={styles.pscontainer}>
-                    <Text style={styles.pstitle}>Promotion</Text>
-                </View>
-                <Slider />
-                {/* ------------------------------------------------------------------------ */}
-                <View style={styles.pscontainer}>
-                    <Text style={styles.pstitle}>TOP SALE</Text>
-                </View>
-                <View style={styles.topsalecontainer}>
-                    <Topsalecontainer navigation={navigation}/>
-                </View>
 
-                {/* ------------------------------------------------------------------------ */}
+export default class HomeScreen extends React.Component {
 
-                <View style={styles.categorycontainer}>
-                    <View style={styles.titlebigcontainer}>
-                        <Text style={styles.titletext}>Drink</Text>
+    render() {
+        return (
+            <View style={styles.maincontainer}>
+                {/* <Navbar/> */}
+                {/* ---------------------------------------------------------------------------- */}
+                <ScrollView >
+                    <View style={styles.pscontainer}>
+                        <Text style={styles.pstitle}>Promotion</Text>
                     </View>
-                    <ScrollView
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={true}>
-                        <Categorycontainer navigation={navigation} />
-                    </ScrollView>
-                </View>
-
-                <View style={styles.categorycontainer}>
-                    <View style={styles.titlebigcontainer}>
-                        <Text style={styles.titletext}>Drink</Text>
+                    <Slider />
+                    {/* ------------------------------------------------------------------------ */}
+                    <View style={styles.pscontainer}>
+                        <Text style={styles.pstitle}>TOP SALE</Text>
                     </View>
-                    <ScrollView
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={true}>
-                        <Categorycontainer navigation={navigation} />
-                    </ScrollView>
-                </View>
-            </ScrollView>
-        </View >
-    );
+                    <View style={styles.topsalecontainer}>
+                    <Topsalecontainer/>
+                    <Topsalecontainer/>
+                    </View>
+
+                    {/* ------------------------------------------------------------------------ */}
+
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Drink</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Categorycontainer />
+
+                        </ScrollView>
+                    </View>
+
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Snack</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Snackcontainer />
+
+                        </ScrollView>
+                    </View>
+
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Instant noodle</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Noodlecontainer />
+
+                        </ScrollView>
+                    </View>
+
+                    <View style={styles.categorycontainer}>
+                        <View style={styles.titlebigcontainer}>
+                            <Text style={styles.titletext}>Lunch box</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={true}>
+
+                            <Lunchcontainer />
+
+                        </ScrollView>
+                    </View>
+                </ScrollView>
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({

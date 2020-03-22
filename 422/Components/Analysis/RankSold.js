@@ -1,20 +1,31 @@
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View, FlatList } from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
 
 export default class RankedSold extends React.Component {
+  state = {
+    tableHead: ['No.', 'Name', 'Sold Out'],
+    rankdata: []
+  }
+  facthData = async () => {
+    const response = await fetch('http://192.168.0.105:8080/order/ranking') //change http// yourIP:8080/product
+    const ranking = await response.json();
+    this.setState({ rankdata: ranking });
+  }
+  componentDidMount() {
+    this.facthData();
+  }
   constructor(props) {
     super(props);
-    this.state = {
-      tableHead: ['No.', 'Name', 'Sold Out'],
-      tableData: [
-        ['1', 'Sprite', 'x 120'],
-        ['2', 'SpriteY', 'x 98'],
-        ['3', 'SpriteZ', 'x 62'],
-        ['..', '...', '..'],
-        ['20', 'SpriteZX', 'x 12']
-      ]
-    };
+  }
+  renderItem(item) {
+    return (
+      <View>
+          <Text textStyle={styles.text}>{item.Rank}</Text>
+          <Text textStyle={styles.text}>{item.idProduct}</Text>
+          <Text textStyle={styles.text}>{item.Qty}</Text>
+      </View>
+    );
   }
   render() {
     const state = this.state;
@@ -36,7 +47,11 @@ export default class RankedSold extends React.Component {
               style={styles.head}
               textStyle={styles.headTableText}
             />
-            <Rows data={state.tableData} textStyle={styles.text} />
+            <FlatList
+                    data={this.state.rankdata}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => this.renderItem(item)}
+                />
           </Table>
         </View>
       </View>
@@ -86,7 +101,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   text: {
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignSelf: 'center'
   }
 });

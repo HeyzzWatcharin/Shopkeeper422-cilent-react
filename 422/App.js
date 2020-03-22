@@ -12,7 +12,6 @@ import ProductManage from './Components/ProductManage'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Searchpage from './Components/Searchpage'
 
-
 const MyTheme = {
   dark: false,
   colors: {
@@ -114,7 +113,6 @@ function MyTabs3() {
     </Tab.Navigator>
   );
 }
-
 // -------------------------------Drawer----------------------------------------------------------------------------------------------------
 
 function Mydrawer() {

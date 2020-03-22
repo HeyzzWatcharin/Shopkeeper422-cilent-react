@@ -12,14 +12,14 @@ import {
 } from 'react-native';
 
 
-export default class Catagorycontainer extends React.Component {
+export default class Lunchcontainer extends React.Component {
 
     state = {
         data: []
     }
 
     facthData = async () => {
-        const response = await fetch('http://192.168.0.105:8080/product/drink') //change http// yourIP:8080/product
+        const response = await fetch('http://192.168.0.105:8080/product/lunch') //change http// yourIP:8080/product
         const products = await response.json();
         this.setState({ data: products });
     }
