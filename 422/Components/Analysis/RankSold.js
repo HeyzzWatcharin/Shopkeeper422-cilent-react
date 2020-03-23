@@ -21,9 +21,7 @@ export default class RankedSold extends React.Component {
   renderItem(item) {
     return (
       <View>
-          <Text textStyle={styles.text}>{item.Rank}</Text>
-          <Text textStyle={styles.text}>{item.idProduct}</Text>
-          <Text textStyle={styles.text}>{item.Qty}</Text>
+          <Text textStyle={styles.text}>{item.Rank} {item.ProductName} {item.Qty} </Text>
       </View>
     );
   }

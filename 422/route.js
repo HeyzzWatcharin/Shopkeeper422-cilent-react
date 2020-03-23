@@ -114,7 +114,7 @@ app.get('/order/ranking', function (req, res) {
 
         // Use the connection
         connection.query('SET @n = 0;')
-        connection.query('SELECT (@n:=@n+1) AS Rank, idProduct, SUM(Quantity) AS Qty FROM Orderdetail GROUP BY idProduct ORDER BY Qty', function (error, results, fields) {
+        connection.query('SELECT (@n:=@n+1) AS Rank, ProductName, SUM(Quantity) AS Qty FROM Orderdetail JOIN Product USING(idProduct) GROUP BY idProduct ORDER BY Qty', function (error, results, fields) {
             // When done with the connection, release it.
             connection.release();
 
