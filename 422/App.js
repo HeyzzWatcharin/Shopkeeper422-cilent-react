@@ -354,6 +354,15 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+function Mydrawer() {
+  return (
+    <Drawer.Navigator initialRouteName="Stack1">
+      <Drawer.Screen name="Mytabs1" component={MyTabs1} />
+      <Drawer.Screen name="Mytabs2" component={MyTabs2} />
+    </Drawer.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>

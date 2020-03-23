@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { SliderBox } from "react-native-image-slider-box";
- 
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { SliderBox } from 'react-native-image-slider-box';
+
 export default class Slider extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +14,7 @@ export default class Slider extends Component {
       ]
     };
   }
- 
+
   render() {
     return (
       <View style={styles.container}>
@@ -28,7 +28,7 @@ export default class Slider extends Component {
     );
   }
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1
