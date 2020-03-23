@@ -22,6 +22,7 @@ import Topsalecontainer from '../HomeContainer/Topsalecontainer'
 export default class HomeScreen extends React.Component {
 
     render() {
+        const { navigation } = this.props;
         return (
             <View style={styles.maincontainer}>
                 {/* <Navbar/> */}
@@ -36,8 +37,7 @@ export default class HomeScreen extends React.Component {
                         <Text style={styles.pstitle}>TOP SALE</Text>
                     </View>
                     <View style={styles.topsalecontainer}>
-                    <Topsalecontainer/>
-                    <Topsalecontainer/>
+                    <Topsalecontainer  navigation = {navigation}/>
                     </View>
 
                     {/* ------------------------------------------------------------------------ */}
@@ -50,7 +50,7 @@ export default class HomeScreen extends React.Component {
                             horizontal={true}
                             showsHorizontalScrollIndicator={true}>
 
-                            <Categorycontainer />
+                            <Categorycontainer  navigation = {navigation}/>
 
                         </ScrollView>
                     </View>
@@ -63,7 +63,7 @@ export default class HomeScreen extends React.Component {
                             horizontal={true}
                             showsHorizontalScrollIndicator={true}>
 
-                            <Snackcontainer />
+                            <Snackcontainer navigation = {navigation}/>
 
                         </ScrollView>
                     </View>
@@ -76,7 +76,7 @@ export default class HomeScreen extends React.Component {
                             horizontal={true}
                             showsHorizontalScrollIndicator={true}>
 
-                            <Noodlecontainer />
+                            <Noodlecontainer navigation = {navigation}/>
 
                         </ScrollView>
                     </View>
@@ -89,7 +89,7 @@ export default class HomeScreen extends React.Component {
                             horizontal={true}
                             showsHorizontalScrollIndicator={true}>
 
-                            <Lunchcontainer />
+                            <Lunchcontainer navigation = {navigation}/>
 
                         </ScrollView>
                     </View>

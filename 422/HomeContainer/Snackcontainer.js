@@ -33,8 +33,10 @@ export default class Snackcontainer extends React.Component {
 
 
     renderItem(item) {
+        const { navigation } = this.props;
         return (
             <View elevation={5} style={styles.smallcontainer}>
+                <TouchableOpacity onPress = {() => navigation.navigate('Detail')}>
                 <Image source={require('../Image/coke.png')} style={styles.imageproduct} />
                 <View style={styles.description}>
                     <Text>{item.ProductName}</Text>
@@ -43,7 +45,7 @@ export default class Snackcontainer extends React.Component {
                         <Text style={styles.qtytext}>QTY : {item.ProductQuantity}</Text>
                     </View>
                 </View>
-                
+                </TouchableOpacity>
             </View>
         );
     }

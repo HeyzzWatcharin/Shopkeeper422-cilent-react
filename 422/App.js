@@ -11,6 +11,8 @@ import ProductDetail from './Components/ProductDetail'
 import ProductManage from './Components/ProductManage'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Searchpage from './Components/Searchpage'
+import ProductAddEdit from './Components/Management/ProductAddEdit'
+import ProductZone from './Components/Management/ProductZone'
 
 const MyTheme = {
   dark: false,
@@ -31,6 +33,12 @@ function Screen1({ navigation }) {
     </View>
   );
 }
+
+// function Edit ({ navigation }){
+//   return(
+//     <ProductAddEdit/>
+//   )
+// }
 
 function Screen2({ navigation }) {
   return (
@@ -290,31 +298,8 @@ function Stack3({ navigation }) {
   return (
     <Stack.Navigator initialRouteName="Product Management">
       <Stack.Screen
-        name="Product Analysis"
-        component={ProductAnalysis}
-        options={{
-          headerLeft: () => (
-            <Icon
-              name="list"
-              size={30}
-              color="#fff"
-              onPress={() => navigation.openDrawer()}
-            />
-          ),
-          headerTitle: () => (
-            <Icon
-              name="home"
-              size={30}
-              color="#fff"
-            />
-          ),
-          headerTitleContainerStyle: {
-            marginLeft: '33%'
-          },
-          headerStyle: {
-            backgroundColor: '#80D444',
-          },
-        }}
+        name="Product Edit"
+        component={ProductAddEdit}
       />
       <Stack.Screen
         name="Product Management"
@@ -343,9 +328,26 @@ function Stack3({ navigation }) {
           },
         }}
       />
+
     </Stack.Navigator>
   );
 }
+
+// function Stack4({ navigation }) {
+//   return (
+//     <Stack.Navigator initialRouteName="Product Management">
+//       <Stack.Screen
+//         name="Product Zone"
+//         component={ProductZone}
+//       />
+//       <Stack.Screen
+//         name="Product Edit"
+//         component={ProductAddEdit}
+//       />
+
+//     </Stack.Navigator>
+//   );
+// }
 
 
 // -------------------------------Return App----------------------------------------------------------------------------------------------------
@@ -353,15 +355,6 @@ function Stack3({ navigation }) {
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
-function Mydrawer() {
-  return (
-    <Drawer.Navigator initialRouteName="Stack1">
-      <Drawer.Screen name="Mytabs1" component={MyTabs1} />
-      <Drawer.Screen name="Mytabs2" component={MyTabs2} />
-    </Drawer.Navigator>
-  );
-}
 
 export default function App() {
   return (

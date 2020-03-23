@@ -20,8 +20,10 @@ export default class RankedSold extends React.Component {
   }
   renderItem(item) {
     return (
-      <View>
-          <Text textStyle={styles.text}>{item.Rank} {item.ProductName} {item.Qty} </Text>
+      <View style={styles.test}>
+        <Text >{item.Rank}  </Text>
+        <Text >{item.ProductName} </Text>
+        <Text >{item.Qty} </Text>
       </View>
     );
   }
@@ -42,14 +44,13 @@ export default class RankedSold extends React.Component {
           <Table>
             <Row
               data={state.tableHead}
-              style={styles.head}
               textStyle={styles.headTableText}
             />
             <FlatList
-                    data={this.state.rankdata}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item }) => this.renderItem(item)}
-                />
+              data={this.state.rankdata}
+              keyExtractor={item => item.id}
+              renderItem={({ item }) => this.renderItem(item)}
+            />
           </Table>
         </View>
       </View>
@@ -98,8 +99,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center'
   },
-  text: {
-    justifyContent: 'space-between',
-    alignSelf: 'center'
+  test: {
+    flexDirection:'row',
+    justifyContent: 'space-evenly'
   }
 });

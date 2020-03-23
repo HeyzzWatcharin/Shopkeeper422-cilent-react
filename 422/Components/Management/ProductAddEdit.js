@@ -5,101 +5,129 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   View,
-  FlatList
+  FlatList,
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 export default class ProductAddEdit extends React.Component {
+  state = {
+    text: ''
+  };
+  Adding = () => {
+    alert('ok');
+  }
   render() {
     return (
       <View style={styles.PageaddEditContain}>
-        <View>
-          <Image
-            style={styles.BackBtn}
-            source={require('../../Image/back-left-arrow-botton.png')}
-          ></Image>
+        <ScrollView>
+          <View>
+            <Text style={styles.titleManage2}>PRODUCT ADDTING</Text>
+          </View>
+          <View stlye={styles.flexRow}>
+            <Image style={styles.ImgProperty}></Image>
+          </View>
+          <View style={styles.UploadContain}>
+            <Text style={styles.UnderLineUpload}>Upload image</Text>
+          </View>
+          <View>
+            <View style={styles.RowContain}>
+              <View>
+                <Text>PRODUCT ID</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} placeholder='hello' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
+            <View style={styles.RowContain}>
+              <View>
+                <Text>PRODUCT CODE</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} value='JAV-6849' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
+            <View style={styles.RowContain}>
+              <View>
+                <Text>PRODUCT NAME</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} value='Water' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
+            <View style={styles.RowContain}>
+              <View>
+                <Text>CATEGORY</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} value='drink' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
+            <View style={styles.RowContain}>
+              <View>
+                <Text>PRICES</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} value='10' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
+            <View style={styles.RowContain}>
+              <View>
+                <Text>QUANTITIES</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} placeholder='24' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
+            <View style={styles.descStyle}>
+              <View>
+                <Text>DESCRIPTION</Text>
+              </View>
+              <View style={styles.RowContainFlex}>
+                <TextInput style={styles.TextInputFromDbsColor} placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum augue nec libero aliquet tristique.' />
+              </View>
+              <Image
+                style={styles.ImgAlignRight}
+                source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
+              ></Image>
+            </View>
 
-          <Text style={styles.titleManage2}>PRODUCT EDITING</Text>
-        </View>
-        <View stlye={styles.flexRow}>
-          <Image style={styles.ImgProperty}></Image>
-        </View>
-        <View style={styles.UploadContain}>
-          <Text style={styles.UnderLineUpload}>Upload image</Text>
-        </View>
-        <View>
-          <View style={styles.RowContain}>
-            <View>
-              <Text>PRODUCT NAME</Text>
-            </View>
-            <View style={styles.RowContainFlex}>
-              <Text style={styles.TextFromDbsColor}>sprice</Text>
-            </View>
-            <Image
-              style={styles.ImgAlignRight}
-              source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
-            ></Image>
-          </View>
-          <View style={styles.RowContain}>
-            <View>
-              <Text>CATEGORY</Text>
-            </View>
-            <View style={styles.RowContainFlex}>
-              <Text style={styles.TextFromDbsColor}>drinks</Text>
-            </View>
-            <Image
-              style={styles.ImgAlignRight}
-              source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
-            ></Image>
-          </View>
-          <View style={styles.RowContain}>
-            <View>
-              <Text>PRICES</Text>
-            </View>
-            <View style={styles.RowContainFlex}>
-              <Text style={styles.TextFromDbsColor}>xxx</Text>
-            </View>
-            <Image
-              style={styles.ImgAlignRight}
-              source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
-            ></Image>
-          </View>
-          <View style={styles.RowContain}>
-            <View>
-              <Text>QUANTITIES</Text>
-            </View>
-            <View style={styles.RowContainFlex}>
-              <Text style={styles.TextFromDbsColor}>22</Text>
-            </View>
-            <Image
-              style={styles.ImgAlignRight}
-              source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
-            ></Image>
-          </View>
-          <View style={styles.descStyle}>
-            <View>
-              <Text>DESCRIPTION</Text>
-            </View>
-            <View style={styles.RowContainFlex}>
-              <Text style={styles.TextFromDbsColor}>
-                There are many variations of passages of Lorem
-              </Text>
-            </View>
-            <Image
-              style={styles.ImgAlignRight}
-              source={require('../../Image/ic_keyboard_arrow_right_24px.png')}
-            ></Image>
-          </View>
-
-          <View style={styles.BtnTab}>
-            <View style={styles.SUbmitBtnContain}>
-              <Text style={styles.SubmitBtn}>Submit</Text>
-            </View>
-            <View style={styles.CancelBtnContain}>
-              <Text style={styles.CancelBtn}>Cancel</Text>
+            <View style={styles.BtnTab}>
+              <TouchableOpacity style={styles.SUbmitBtnContain} >
+                <Button onPress={this.Adding} title='SUBMIT' />
+              </TouchableOpacity>
+              <View style={styles.CancelBtnContain}>
+                <Button title='CANCEL' />
+              </View>
             </View>
           </View>
-        </View>
+        </ScrollView>
       </View>
     );
   }
@@ -107,8 +135,7 @@ export default class ProductAddEdit extends React.Component {
 
 const styles = StyleSheet.create({
   PageaddEditContain: {
-    paddingVertical: 15,
-    marginTop: 20
+    flex:1,
   },
   flexRow: {
     flexDirection: 'row'
@@ -119,7 +146,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    marginBottom: 20
+    marginVertical: 20
   },
   ImgProperty: {
     height: 250,
@@ -157,7 +184,7 @@ const styles = StyleSheet.create({
   },
   BtnTab: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     margin: 10
   },
   SUbmitBtnContain: {
@@ -194,5 +221,12 @@ const styles = StyleSheet.create({
     height: 26,
     marginTop: 35,
     marginLeft: 15
+  },
+  TextInputFromDbsColor: {
+    color: '#717983',
+    borderWidth: 1,
+    borderColor: '#777',
+    width: 200,
+    paddingHorizontal:5
   }
 });

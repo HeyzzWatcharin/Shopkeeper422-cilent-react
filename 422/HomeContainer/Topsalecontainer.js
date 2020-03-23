@@ -11,7 +11,7 @@ import {
     FlatList,
 } from 'react-native';
 
-
+const numColumn = 2;
 export default class Catagorycontainer extends React.Component {
 
     constructor(props) {
@@ -19,8 +19,10 @@ export default class Catagorycontainer extends React.Component {
     }
 
     renderItem(item) {
+      const { navigation } = this.props;
         return (
             <View elevation={5} style={styles.smallcontainer}>
+              <TouchableOpacity onPress = {() => navigation.navigate('Detail')}>
                 <Image source={require('../Image/X.png')} style={styles.imageproduct} />
                 <View style={styles.description}>
                     <Text>title</Text>
@@ -29,6 +31,7 @@ export default class Catagorycontainer extends React.Component {
                         <Text style={styles.qtytext}>QTY : 5</Text>
                     </View>
                 </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -37,9 +40,9 @@ export default class Catagorycontainer extends React.Component {
         return (
             <View>
                 <FlatList
-                    horizontal={true}
-                    data={[1, 2,]}  // data = [1,2]  <-- array
+                    data={[1, 2, 3, 4]}  // data = [1,2]  <-- array
                     renderItem={({ item }) => this.renderItem(item)}
+                    numColumns = {numColumn}
                 />
             </View>
         );

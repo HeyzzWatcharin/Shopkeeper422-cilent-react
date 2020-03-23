@@ -6,9 +6,12 @@ import {
   StyleSheet,
   Text,
   View,
-  FlatList
+  FlatList,
+  Button
 } from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
+import ProductAddEdit from './ProductAddEdit';
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class ProductZone extends React.Component {
   constructor(props) {
@@ -41,14 +44,18 @@ export default class ProductZone extends React.Component {
   }
   render() {
     const state = this.state;
+    const { navigation } = this.props;
     return (
       <View style={styles.ProductContain}>
         <View style={styles.flexRow}>
           <Text style={styles.titleManage}>Products</Text>
-          <Image
-            style={styles.AddBtn}
-            source={require('../../Image/ic_add_box_24px.png')}
-          ></Image>
+          <TouchableOpacity onPress={() => navigation.navigate('Product Edit')}>
+            <Image
+              style={styles.AddBtn}
+              source={require('../../Image/ic_add_box_24px.png')}
+              
+            ></Image>
+          </TouchableOpacity>
         </View>
         <View style={styles.container}>
           <Table>

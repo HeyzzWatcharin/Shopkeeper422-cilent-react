@@ -33,17 +33,19 @@ export default class Lunchcontainer extends React.Component {
 
 
     renderItem(item) {
+        const { navigation } = this.props;
         return (
             <View elevation={5} style={styles.smallcontainer}>
-                <Image source={require('../Image/coke.png')} style={styles.imageproduct} />
-                <View style={styles.description}>
-                    <Text>{item.ProductName}</Text>
-                    <View style={styles.priceandqty}>
-                        <Text style={styles.pricetext}>฿ : {item.Price}</Text>
-                        <Text style={styles.qtytext}>QTY : {item.ProductQuantity}</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Detail')}>
+                    <Image source={require('../Image/coke.png')} style={styles.imageproduct} />
+                    <View style={styles.description}>
+                        <Text>{item.ProductName}</Text>
+                        <View style={styles.priceandqty}>
+                            <Text style={styles.pricetext}>฿ : {item.Price}</Text>
+                            <Text style={styles.qtytext}>QTY : {item.ProductQuantity}</Text>
+                        </View>
                     </View>
-                </View>
-                
+                </TouchableOpacity>
             </View>
         );
     }

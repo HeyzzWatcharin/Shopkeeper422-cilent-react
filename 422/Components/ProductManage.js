@@ -11,11 +11,10 @@ import {
 import HeadZone from './Management/Headzone';
 import TopSalesZone from './Management/TopSalesZone';
 import CategoriesZone from './Management/CategoriesZone';
-import ProductAddEdit from './Management/ProductAddEdit';
+ import ProductAddEdit from './Management/ProductAddEdit';
 import ProductZone from './Management/ProductZone';
 
-export default class ProductManage extends React.Component {
-  render() {
+export default function ProductManage({navigation})  {
     return (
       
         <View style={styles.container}>
@@ -23,14 +22,14 @@ export default class ProductManage extends React.Component {
             <HeadZone />
             <TopSalesZone />
             <CategoriesZone />
-            <ProductZone />
-            <ProductAddEdit />
+            <ProductZone navigation={navigation}/>
+            {/* <ProductAddEdit /> */}
           </ScrollView>
         </View>
       
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
